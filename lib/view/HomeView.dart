@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_start/global/Themes.dart';
+import 'package:flutterstart/global/Themes.dart';
 
 class HomeView extends StatefulWidget {
   @override

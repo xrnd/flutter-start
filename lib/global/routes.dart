@@ -1,6 +1,5 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_start/view/HomeView.dart';
 
 final String homeRoute = '/home';
 
