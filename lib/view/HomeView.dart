@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterstart/global/Application.dart';
 import 'package:flutterstart/global/Themes.dart';
 import 'package:flutterstart/global/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -14,6 +17,12 @@ class HomeView extends StatefulWidget {
 }
 
 class HomeViewState extends State<HomeView> {
+
+
+  HomeViewState() {
+    saveVegetablesInCart();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -28,12 +37,6 @@ class HomeViewState extends State<HomeView> {
                       transition: TransitionType.nativeModal, replace: false);
                 },
                 child: new Text('State Widgets')),
-            new FlatButton(
-                onPressed: () {
-                  Application.router.navigateTo(context, asyncRoute,
-                      transition: TransitionType.nativeModal, replace: false);
-                },
-                child: new Text('Async Widgets')),
             new FlatButton(
                 onPressed: () {
                   Application.router.navigateTo(context, layoutRoute,
@@ -54,5 +57,16 @@ class HomeViewState extends State<HomeView> {
           : Themes.kDefaultTheme,
     );
   }
+
+  Future saveVegetablesInCart() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString('Vegetables',
+        'Brinjal,Tomatoes,Potatoes,French Bean,Capsicum,Bell pepper,Cucumber');
+    preferences.setString('Fruits',
+        'Bananas,Grapes,Water melon,Musk melon,Cherries,Black berries,Oranges');
+    preferences.setString('Flowers',
+        'Lilly,Rose,Sunflower,Aster,Lotus,Jasmine,Lavendar,Tulip,Orchid');
+  }
+
 
 }

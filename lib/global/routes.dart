@@ -1,11 +1,12 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/view/FutureWidgetView.dart';
+import 'package:flutterstart/view/LayoutWidgetView.dart';
 import 'package:flutterstart/view/StateWidgetView.dart';
 
 final String homeRoute = '/home';
 
 final String stateRoute = '/state';
-final String asyncRoute = '/async';
 final String layoutRoute = '/layout';
 final String futureRoute = '/future';
 
@@ -20,6 +21,16 @@ class Routes {
     router.define(stateRoute, handler: new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
           return new StateWidgetView();
+        }));
+
+    router.define(layoutRoute, handler: new Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+          return new LayoutWidgetView();
+        }));
+
+    router.define(futureRoute, handler: new Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+          return new FutureWidgetView();
         }));
 
   }
