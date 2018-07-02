@@ -16,6 +16,7 @@ class Themes {
       900: const Color(0xFF263238),
     },
   );
+
   static const int _bluePrimaryValue = 0xFF607D8B;
 
   static ThemeData kIOSTheme = new ThemeData(
