@@ -65,6 +65,7 @@ class FutureDataState extends State<FutureDataSection> {
   }
 
   Future<SavedModel> getDataFromSP() async {
+
     SharedPreferences preferences = await SharedPreferences.getInstance();
     SavedModel model = new SavedModel();
 
@@ -74,4 +75,5 @@ class FutureDataState extends State<FutureDataSection> {
 
     return model;
   }
+
 }

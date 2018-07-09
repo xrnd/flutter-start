@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Themes {
+
   static const MaterialColor darkBlue = const MaterialColor(
     _bluePrimaryValue,
     const <int, Color>{
@@ -32,4 +33,5 @@ class Themes {
     primaryColorDark: const Color(0xFF455A64),
     primaryColor: const Color(0xFF607D8B),
   );
+
 }

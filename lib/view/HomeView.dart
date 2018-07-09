@@ -29,27 +29,46 @@ class HomeViewState extends State<HomeView> {
       debugShowCheckedModeBanner: false,
       home: new Scaffold(
         appBar: new AppBar(primary: true, title: new Text('Flutter-Start')),
-        body: new Column(
-          children: <Widget>[
-            new FlatButton(
-                onPressed: () {
-                  Application.router.navigateTo(context, stateRoute,
-                      transition: TransitionType.nativeModal, replace: false);
-                },
-                child: new Text('State Widgets')),
-            new FlatButton(
-                onPressed: () {
-                  Application.router.navigateTo(context, layoutRoute,
-                      transition: TransitionType.nativeModal, replace: false);
-                },
-                child: new Text('Layout Widgets')),
-            new FlatButton(
-                onPressed: () {
-                  Application.router.navigateTo(context, futureRoute,
-                      transition: TransitionType.nativeModal, replace: false);
-                },
-                child: new Text('Future Widgets')),
-          ],
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                new FlatButton.icon(
+                  onPressed: () {
+                    Application.router.navigateTo(context, stateRoute,
+                        transition: TransitionType.nativeModal, replace: true);
+                  },
+                  icon: new Icon(Icons.add, color: Colors.white,),
+                  color: Colors.blue,
+                  label: new Text('State Widgets',
+                    style: new TextStyle(color: Colors.white),),
+
+                ),
+                new FlatButton.icon(
+
+                  onPressed: () {
+                    Application.router.navigateTo(context, layoutRoute,
+                        transition: TransitionType.nativeModal, replace: true);
+                  },
+                  icon: new Icon(Icons.add, color: Colors.white,),
+                  color: Colors.blue,
+                  label: new Text('Layout Widgets',
+                    style: new TextStyle(color: Colors.white),),),
+                new FlatButton.icon(
+
+                  onPressed: () {
+                    Application.router.navigateTo(context, futureRoute,
+                        transition: TransitionType.nativeModal, replace: true);
+                  },
+                  icon: new Icon(Icons.add, color: Colors.white,),
+                  color: Colors.blue,
+                  label: new Text('Future Widgets',
+                    style: new TextStyle(color: Colors.white),),),
+              ],
+            ),
+          ),
         ),
       ),
       theme: defaultTargetPlatform == TargetPlatform.iOS
